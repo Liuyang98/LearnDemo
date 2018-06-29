@@ -10,6 +10,7 @@ import java.lang.annotation.RetentionPolicy;
 
 
 public class AnnotationsUtil {
+
     //使用注解代替枚举
     public static final int SUNDAY = 0;
     public static final int MONDAY = 1;
