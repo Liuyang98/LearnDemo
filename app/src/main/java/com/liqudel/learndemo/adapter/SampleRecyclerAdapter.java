@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.liqudel.learndemo.R;
 import com.liqudel.learndemo.activity.ConstraintActivity;
+import com.liqudel.learndemo.activity.CustomBehaviorActivity;
 import com.liqudel.learndemo.activity.EasyBehaviorActivity;
 
 import java.util.List;
@@ -44,6 +45,9 @@ public class SampleRecyclerAdapter extends BaseRecyclerAdapter<SampleRecyclerAda
                 break;
             case "1":
                 mContext.startActivity(new Intent(mContext, EasyBehaviorActivity.class));
+                break;
+            case "2":
+                mContext.startActivity(new Intent(mContext, CustomBehaviorActivity.class));
                 break;
             default:
                 break;

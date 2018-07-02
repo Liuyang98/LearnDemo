@@ -2,7 +2,7 @@ package com.liqudel.learndemo.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,15 +37,14 @@ public class SimpleFragment extends BaseFragment {
     private void init() {
 
         mDatas = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            mDatas.add("测试：：" + i);
-        }
+        mDatas.add("Constraint约束布局");
+        mDatas.add("Behavior_base");
+        mDatas.add("Behavior_custom");
     }
 
     private void initRecy() {
-        rv.setLayoutManager(new GridLayoutManager(mContext, 2));
+        rv.setLayoutManager(new LinearLayoutManager(mContext));
         rv.setAdapter(new SampleRecyclerAdapter(mContext, mDatas));
-
     }
 }
 

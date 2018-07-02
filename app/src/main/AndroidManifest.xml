@@ -23,6 +23,7 @@
             android:theme="@style/noActionBarAppTheme" />
 
         <activity android:name=".activity.ConstraintActivity" />
+        <activity android:name=".activity.CustomBehaviorActivity" />
 
     </application>
 

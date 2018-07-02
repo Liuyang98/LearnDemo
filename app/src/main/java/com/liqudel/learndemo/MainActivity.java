@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         init();
         initViewPager();
     }
@@ -37,10 +36,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initViewPager() {
-        for (int i = 0; i < 6; i++) {
-            fragmentList.add(new SimpleFragment().setType(i));
-            titleList.add("页面:" + i);
-        }
+        fragmentList.add(new SimpleFragment().setType(0));
+        titleList.add("用例列表");
+
         vp.setAdapter(new SamplePagerAdapter(getSupportFragmentManager(), fragmentList, titleList));
         tabLayout.setupWithViewPager(vp);
         vp.setVisibility(View.VISIBLE);
