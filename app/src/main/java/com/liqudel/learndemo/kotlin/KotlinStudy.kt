@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.liqudel.learndemo.R
 
-
 class KotlinStudy : AppCompatActivity() {
 
     //变量
@@ -33,7 +32,7 @@ class KotlinStudy : AppCompatActivity() {
     fun sum(a: Int ,b: Int ):Int{
         return a + b
     }
-
+    
     //函数定义（无参）
     fun printSum(a: Int ,b:Int ){
         print(a+b)

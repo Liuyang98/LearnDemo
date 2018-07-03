@@ -24,6 +24,7 @@
 
         <activity android:name=".activity.ConstraintActivity" />
         <activity android:name=".activity.CustomBehaviorActivity" />
+        <activity android:name=".activity.RxJavaActivity" />
 
     </application>
 

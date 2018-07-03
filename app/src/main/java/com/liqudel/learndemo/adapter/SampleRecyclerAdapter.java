@@ -11,6 +11,7 @@ import com.liqudel.learndemo.R;
 import com.liqudel.learndemo.activity.ConstraintActivity;
 import com.liqudel.learndemo.activity.CustomBehaviorActivity;
 import com.liqudel.learndemo.activity.EasyBehaviorActivity;
+import com.liqudel.learndemo.activity.RxJavaActivity;
 
 import java.util.List;
 
@@ -48,6 +49,9 @@ public class SampleRecyclerAdapter extends BaseRecyclerAdapter<SampleRecyclerAda
                 break;
             case "2":
                 mContext.startActivity(new Intent(mContext, CustomBehaviorActivity.class));
+                break;
+            case "3":
+                mContext.startActivity(new Intent(mContext, RxJavaActivity.class));
                 break;
             default:
                 break;

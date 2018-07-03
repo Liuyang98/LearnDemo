@@ -35,11 +35,11 @@ public class SimpleFragment extends BaseFragment {
     }
 
     private void init() {
-
         mDatas = new ArrayList<>();
         mDatas.add("Constraint约束布局");
         mDatas.add("Behavior_base");
         mDatas.add("Behavior_custom");
+        mDatas.add("RxJava 2.0");
     }
 
     private void initRecy() {

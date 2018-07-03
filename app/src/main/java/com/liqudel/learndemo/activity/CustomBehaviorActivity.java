@@ -33,5 +33,4 @@ public class CustomBehaviorActivity extends AppCompatActivity {
         });
     }
 
-
 }
