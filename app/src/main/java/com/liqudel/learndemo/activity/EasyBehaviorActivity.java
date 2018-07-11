@@ -23,7 +23,6 @@ public class EasyBehaviorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_easy_behavior);
 
-
         init();
         initView();
     }
@@ -42,7 +41,8 @@ public class EasyBehaviorActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         rv.setLayoutManager(new LinearLayoutManager(this));
-        rv.setAdapter(new SampleRecyclerAdapter(this, mDatas));
+        SampleRecyclerAdapter sampleRecyclerAdapter = new SampleRecyclerAdapter(this, mDatas);
+        rv.setAdapter(sampleRecyclerAdapter);
     }
 
 }

@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.liqudel.learndemo.adapter.SamplePagerAdapter;
+import com.liqudel.learndemo.fragment.AlgorithmFragment;
 import com.liqudel.learndemo.fragment.SimpleFragment;
 
 import java.util.ArrayList;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         init();
         initViewPager();
+        //数据结构-算法
     }
 
     private void init() {
@@ -37,7 +39,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void initViewPager() {
         fragmentList.add(new SimpleFragment().setType(0));
+        fragmentList.add(new AlgorithmFragment().setType(1));
         titleList.add("用例列表");
+        titleList.add("算法");
+
 
         vp.setAdapter(new SamplePagerAdapter(getSupportFragmentManager(), fragmentList, titleList));
         tabLayout.setupWithViewPager(vp);
