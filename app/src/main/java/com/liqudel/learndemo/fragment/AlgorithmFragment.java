@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 
 import com.liqudel.learndemo.R;
 import com.liqudel.learndemo.adapter.SampleRecyclerAdapter;
-import com.liqudel.learndemo.sort.HeapSort;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,7 +19,6 @@ import java.util.List;
 /**
  * Created by yangl.liu on 2018/3/7.
  */
-
 public class AlgorithmFragment extends BaseFragment {
     private static final String TAG = "AlgorithmFragment";
     private RecyclerView rv;
@@ -41,8 +39,8 @@ public class AlgorithmFragment extends BaseFragment {
 
     private void init() {
         mDatas = new ArrayList<>();
-        mDatas.add("算法1");
-        mDatas.add("算法2");
+        mDatas.add("快速排序");
+        mDatas.add("堆排序");
         mDatas.add("算法3");
         mDatas.add("算法4");
         mDatas.add("算法5");
@@ -53,12 +51,12 @@ public class AlgorithmFragment extends BaseFragment {
         rv.setAdapter(new SampleRecyclerAdapter(mContext, mDatas));
     }
 
-
+    //生成数量不定定两位数随机数，并且通过UI操作， 把所有算法类都实现一个公共接口 implements
     private void initAlgorithm() {
         int a[] = {42, 38, 45, 50, 47, 13, 27, 42};
 //        new QuickSort().sort(a);
-        new HeapSort().sort(a);
-        Log.e(TAG, ":: " + Arrays.toString(a));
+//        new HeapSort().sort(a);
+        Log.e(TAG, ":::: " + Arrays.toString(a));
     }
 
 }
