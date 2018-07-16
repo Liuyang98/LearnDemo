@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 
 import com.liqudel.learndemo.R;
 import com.liqudel.learndemo.adapter.SampleRecyclerAdapter;
+import com.liqudel.learndemo.sort.HeapSort;
+import com.liqudel.learndemo.sort.QuickSort;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -11,6 +11,7 @@ import com.liqudel.learndemo.R;
 import com.liqudel.learndemo.activity.ConstraintActivity;
 import com.liqudel.learndemo.activity.CustomBehaviorActivity;
 import com.liqudel.learndemo.activity.EasyBehaviorActivity;
+import com.liqudel.learndemo.activity.QuickSortActivity;
 import com.liqudel.learndemo.activity.RxJavaActivity;
 
 import java.util.List;
@@ -52,6 +53,9 @@ public class SampleRecyclerAdapter extends BaseRecyclerAdapter<SampleRecyclerAda
                 break;
             case "3":
                 mContext.startActivity(new Intent(mContext, RxJavaActivity.class));
+                break;
+            case "4":
+//                mContext.startActivity(new Intent(mContext, QuickSortActivity.class));
                 break;
             default:
                 break;

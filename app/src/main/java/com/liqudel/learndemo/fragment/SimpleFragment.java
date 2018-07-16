@@ -40,7 +40,7 @@ public class SimpleFragment extends BaseFragment {
         mDatas.add("Behavior_base");
         mDatas.add("Behavior_custom");
         mDatas.add("RxJava 2.0");
-        mDatas.add("Behavior_alpha");
+        mDatas.add("QuickSort");
     }
 
     private void initRecy() {
