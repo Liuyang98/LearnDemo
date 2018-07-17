@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.liqudel.learndemo.R;
 import com.liqudel.learndemo.adapter.SampleRecyclerAdapter;
@@ -16,6 +17,7 @@ import com.liqudel.learndemo.sort.QuickSort;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -46,6 +48,12 @@ public class AlgorithmFragment extends BaseFragment {
         mDatas.add("算法3");
         mDatas.add("算法4");
         mDatas.add("算法5");
+        HashMap<String, String> map = new HashMap<>();
+
+        map.put("标题", "dasdadasda");
+        String str = map.put("标题", "新标题");
+        Toast.makeText(mContext, "" + str, Toast.LENGTH_SHORT).show();
+
     }
 
     private void initRecy() {
