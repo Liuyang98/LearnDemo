@@ -20,12 +20,11 @@ import java.util.List;
  * Created by yangl.liu on 2018/6/29.
  */
 public class SampleRecyclerAdapter extends BaseRecyclerAdapter<SampleRecyclerAdapter.SimHolder> implements View.OnClickListener {
-    private List<String> mDatas;
 
     public SampleRecyclerAdapter(Context mContext, List mDatas) {
         super(mContext, mDatas);
-        this.mDatas = mDatas;
     }
+
 
     @Override
     public SimHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -34,7 +33,7 @@ public class SampleRecyclerAdapter extends BaseRecyclerAdapter<SampleRecyclerAda
 
     @Override
     public void onBindViewHolder(SimHolder viewHolder, int position) {
-        viewHolder.textView.setText(mDatas.get(position));
+        viewHolder.textView.setText(""+mDatas.get(position));
         viewHolder.textView.setTag("" + position);
     }
 
@@ -55,7 +54,7 @@ public class SampleRecyclerAdapter extends BaseRecyclerAdapter<SampleRecyclerAda
                 mContext.startActivity(new Intent(mContext, RxJavaActivity.class));
                 break;
             case "4":
-//                mContext.startActivity(new Intent(mContext, QuickSortActivity.class));
+                mContext.startActivity(new Intent(mContext, QuickSortActivity.class));
                 break;
             default:
                 break;

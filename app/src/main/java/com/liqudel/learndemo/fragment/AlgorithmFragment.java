@@ -50,7 +50,6 @@ public class AlgorithmFragment extends BaseFragment {
         mDatas.add("算法5");
         HashMap<String, String> map = new HashMap<>();
 
-        map.put("标题", "dasdadasda");
         String str = map.put("标题", "新标题");
         Toast.makeText(mContext, "" + str, Toast.LENGTH_SHORT).show();
 

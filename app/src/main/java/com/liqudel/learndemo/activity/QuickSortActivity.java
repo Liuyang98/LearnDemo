@@ -60,7 +60,6 @@ public class QuickSortActivity extends AppCompatActivity implements View.OnClick
     private void moveAnim(final int l, final int r) {
         final TextView lTv = textViews.get(l);
         TextView rTv = textViews.get(r);
-
         ObjectAnimator ltranslationX = new ObjectAnimator().ofFloat(lTv, "translationY", 0, 150);
         Toast.makeText(this, "(r - l)" + (r - l), Toast.LENGTH_SHORT).show();
         ObjectAnimator ltranslationY = new ObjectAnimator().ofFloat(lTv, "translationX", 0, (r - l) * 150);
@@ -70,7 +69,6 @@ public class QuickSortActivity extends AppCompatActivity implements View.OnClick
         animatorSet.playSequentially(ltranslationX, ltranslationY, ltranslationX2); //设置动画
         animatorSet.setDuration(1000);  //设置动画时间
         animatorSet.start(); //启动
-
         ObjectAnimator rtranslationX = new ObjectAnimator().ofFloat(rTv, "translationY", 0, 150);
         ObjectAnimator rtranslationY = new ObjectAnimator().ofFloat(rTv, "translationX", 0, (r - l) * -150);
         ObjectAnimator rtranslationX2 = new ObjectAnimator().ofFloat(rTv, "translationY", 150, 0);
