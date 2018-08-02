@@ -8,6 +8,9 @@ import android.support.annotation.Nullable;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
+/**
+ * 注解类使用，还需要整更多注解方式，了解注解的原理以及使用
+ */
 public class AnnotationsUtil {
     //使用注解代替枚举
     public static final int SUNDAY = 0;
