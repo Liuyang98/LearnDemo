@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 import com.liqudel.learndemo.R;
 import com.liqudel.learndemo.adapter.SampleRecyclerAdapter;
-import com.liqudel.learndemo.sort.BinarySearch;
 import com.liqudel.learndemo.sort.HeapSort;
 import com.liqudel.learndemo.sort.QuickSort;
 
@@ -63,8 +62,8 @@ public class AlgorithmFragment extends BaseFragment {
     //生成数量不定定两位数随机数，并且通过UI操作， 把所有算法类都实现一个公共接口 implements
     private void initAlgorithm() {
         int a[] = {42, 38, 45, 50, 47, 13, 27, 42};
-        new QuickSort().sort(a);
-//        new HeapSort().sort(a);
+//        new QuickSort().sort(a);
+        new HeapSort().sort(a);
 //        new BinarySearch().sort(a);
         Log.e(TAG, ":: " + Arrays.toString(a));
     }

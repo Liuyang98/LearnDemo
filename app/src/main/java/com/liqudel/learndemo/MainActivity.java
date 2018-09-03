@@ -43,9 +43,18 @@ public class MainActivity extends AppCompatActivity {
         fragmentList = new ArrayList<>();
         titleList = new ArrayList<>();
 
+
 //        valueTest();
-        proxyTest();
+//        proxyTest();
+
+//        singleNumber(new int[]{4, 1, 2, 1, 2});
     }
+
+
+    public int singleNumber(int[] nums) {
+        return -1;
+    }
+
 
     private void proxyTest() {
         Subject realSubject = new RealSubject();
@@ -59,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
          * 第二个参数realSubject.getClass().getInterfaces()，我们这里为代理对象提供的接口是真实对象所实行的接口，
          * 表示我要代理的是该真实对象，这样我就能调用这组接口中的方法了
          * 第三个参数handler， 我们这里将这个代理对象关联到了上方的InvocationHandler这个对象上
+         *
          */
 
         Subject subject = (Subject) Proxy.newProxyInstance(handler.getClass().getClassLoader(), realSubject.getClass().getInterfaces(), handler);
@@ -80,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
         vp.setAdapter(new SamplePagerAdapter(getSupportFragmentManager(), fragmentList, titleList));
         tabLayout.setupWithViewPager(vp);
         vp.setVisibility(View.VISIBLE);
+
     }
 
     private void valueTest() {
