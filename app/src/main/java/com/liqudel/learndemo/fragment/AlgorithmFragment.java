@@ -63,7 +63,7 @@ public class AlgorithmFragment extends BaseFragment {
     private void initAlgorithm() {
         int a[] = {42, 38, 45, 50, 47, 13, 27, 42};
 //        new QuickSort().sort(a);
-        new HeapSort().sort(a);
+//        new HeapSort().sort(a);
 //        new BinarySearch().sort(a);
         Log.e(TAG, ":: " + Arrays.toString(a));
     }
