@@ -20,7 +20,7 @@ public class Subject191 implements Subjcet {
     @Override
     public void run() {
         int n = hammingWeight(1027);
-        Log.e(TAG, "run: " +n );
+        Log.e(TAG, "run: " + n);
     }
 
     public int hammingWeight(int n) {
