@@ -19,6 +19,8 @@ import com.liqudel.learndemo.leetcode.Subject169;
 import com.liqudel.learndemo.leetcode.Subject191;
 import com.liqudel.learndemo.leetcode.Subject198;
 import com.liqudel.learndemo.leetcode.Subject283;
+import com.liqudel.learndemo.leetcode.Subject860;
+import com.liqudel.learndemo.leetcode.Subject896;
 import com.liqudel.learndemo.proxy.DynamicProxy;
 import com.liqudel.learndemo.proxy.RealSubject;
 import com.liqudel.learndemo.proxy.Subject;
@@ -54,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 //        valueTest();
 //        proxyTest();
 
-     new Subject283().run();
+     new Subject896().run();
     }
 
 

@@ -17,7 +17,6 @@ import android.util.Log;
 public class Subject283 implements Subjcet {
     private static final String TAG = "Subject283";
 
-
     public void moveZeroes(int[] nums) {
         int length = nums.length;
 
@@ -36,13 +35,6 @@ public class Subject283 implements Subjcet {
         for(int i=length-count;i<length;i++){
             nums[i]=0;
         }
-    }
-
-
-    private void swap(int[] ints, int a, int b) {
-        int t = ints[a];
-        ints[a] = ints[b];
-        ints[b] = t;
     }
 
 
