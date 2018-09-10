@@ -12,7 +12,12 @@ import com.liqudel.learndemo.adapter.SamplePagerAdapter;
 import com.liqudel.learndemo.bean.ValueSendBean;
 import com.liqudel.learndemo.fragment.AlgorithmFragment;
 import com.liqudel.learndemo.fragment.SimpleFragment;
+import com.liqudel.learndemo.leetcode.Subject198;
 import com.liqudel.learndemo.leetcode.Subject263;
+import com.liqudel.learndemo.leetcode.Subject55;
+import com.liqudel.learndemo.leetcode.Subject62;
+import com.liqudel.learndemo.leetcode.Subject64;
+import com.liqudel.learndemo.leetcode.Subject75;
 import com.liqudel.learndemo.proxy.DynamicProxy;
 import com.liqudel.learndemo.proxy.RealSubject;
 import com.liqudel.learndemo.proxy.Subject;
@@ -48,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 //        valueTest();
 //        proxyTest();
 
-     new Subject263().run();
+        new Subject55().run();
     }
 
 
