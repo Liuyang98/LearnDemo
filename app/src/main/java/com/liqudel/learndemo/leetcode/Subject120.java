@@ -24,7 +24,6 @@ public class Subject120 implements Subjcet {
 
     int[] inits = new int[]{2, 3, 4, 6, 5, 7, 4, 1, 8, 3};
 
-
     @Override
     public void run() {
         int k = 0;
@@ -36,9 +35,7 @@ public class Subject120 implements Subjcet {
                 k++;
             }
             list.add(mlist);
-
         }
-
 
         int n = minimumTotal(list);
         Log.e(TAG, "run: " + n);
@@ -46,51 +43,24 @@ public class Subject120 implements Subjcet {
     }
 
     public int minimumTotal(List<List<Integer>> triangle) {
-/*
-        triangle.get(1).set(0, triangle.get(0).get(0));
-        triangle.get(1).set(1, triangle.get(0).get(0));
-
-
-        triangle.get(2).set(0, triangle.get(1).get(0));
-        triangle.get(2).set(1, Math.min(triangle.get(1).get(0), triangle.get(0).get(1)));
-        triangle.get(2).set(2, triangle.get(1).get(1));
-
-
-        triangle.get(3).set(0, triangle.get(2).get(0));
-        triangle.get(3).set(1, Math.min(triangle.get(2).get(0), triangle.get(0).get(1)));
-        triangle.get(3).set(2, Math.min(triangle.get(2).get(1), triangle.get(0).get(2)));
-        triangle.get(3).set(3, triangle.get(2).get(2));*/
-
-/*
-        triangle.get(4).set(0, triangle.get(0).get(0));
-        triangle.get(4).set(1, Math.min(triangle.get(0).get(0), triangle.get(0).get(1)));
-        triangle.get(4).set(2, Math.min(triangle.get(0).get(1), triangle.get(0).get(2)));
-        triangle.get(4).set(3, Math.min(triangle.get(0).get(2), triangle.get(0).get(3)));
-        triangle.get(4).set(4, triangle.get(0).get(2));
-*/
-
         for (int i = 1; i < triangle.size(); i++) {
-
             for (int j = 0; j <= i; j++) {
-                Log.e(TAG, "i:   " + i + "   j :" + j);
                 int value;
-                if (j == 0 || j == i ) {
-                    value = triangle.get(i - 1).get(j);
+                List<Integer> mlist = triangle.get(i - 1);
+                if (j == 0) {
+                    value = mlist.get(0);
+                } else if (j == i) {
+                    value = mlist.get(j - 1);
                 } else {
-                    value = Math.min(triangle.get(i - 1).get(j - 1), triangle.get(i - 1).get(j));
+                    value = Math.min(mlist.get(j - 1), mlist.get(j));
                 }
-
-
-                triangle.get(i).set(j, value);
-
+                triangle.get(i).set(j, triangle.get(i).get(j) + value);
             }
-
         }
 
-        int m = 999;
-        for (int i : triangle.get(triangle.size() - 1)) {
+        int m = triangle.get(triangle.size() - 1).get(0);
+        for (int i : triangle.get(triangle.size() - 1))
             if (i < m) m = i;
-        }
 
         return m;
     }
