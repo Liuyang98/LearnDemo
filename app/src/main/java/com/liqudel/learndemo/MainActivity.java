@@ -9,11 +9,8 @@ import android.util.Log;
 import android.view.View;
 
 import com.liqudel.learndemo.adapter.SamplePagerAdapter;
-import com.liqudel.learndemo.bean.ValueSendBean;
 import com.liqudel.learndemo.fragment.AlgorithmFragment;
 import com.liqudel.learndemo.fragment.SimpleFragment;
-import com.liqudel.learndemo.leetcode.Subjcet188;
-import com.liqudel.learndemo.leetcode.Subjcet628;
 import com.liqudel.learndemo.proxy.DynamicProxy;
 import com.liqudel.learndemo.proxy.RealSubject;
 import com.liqudel.learndemo.proxy.Subject;
@@ -45,14 +42,8 @@ public class MainActivity extends AppCompatActivity {
         fragmentList = new ArrayList<>();
         titleList = new ArrayList<>();
 
-
-//        valueTest();
-//        proxyTest();
-
-        new Subjcet188().run();
+        proxyTest();
     }
-
-
 
     private void proxyTest() {
         Subject realSubject = new RealSubject();
@@ -75,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
         subject.rent();
         subject.hello("world");
 
-
     }
 
     private void initViewPager() {
@@ -90,25 +80,5 @@ public class MainActivity extends AppCompatActivity {
         vp.setVisibility(View.VISIBLE);
 
     }
-
-    private void valueTest() {
-        int a = 89;
-        ValueSendBean bean = new ValueSendBean("first", 1);
-        ValueSendBean bean2 = new ValueSendBean("second", 2);
-        Log.e(TAG, "bean : " + bean.toString() + "  :  bean2 : " + bean2.toString() + " a : " + a);
-        swap(bean, bean2, a);
-
-        Log.e(TAG + " ;2;", "bean : " + bean.toString() + "  :  bean2 : " + bean2.toString() + " a : " + a);
-    }
-
-    private void swap(ValueSendBean bean1, ValueSendBean bean2, int a) {
-        a++;
-        Log.e(TAG, "swap: " + a);
-        ValueSendBean temp;
-        temp = bean1;
-        bean1 = bean2;
-        bean2 = temp;
-    }
-
 }
 
