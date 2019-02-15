@@ -1,6 +1,23 @@
 package com.liqudel.learndemo.sort;
 
+import android.util.Log;
+
+import java.util.Arrays;
+
 public class HeapSort implements Sort {
+    private static final String TAG = "堆排序";
+
+    private static HeapSort heapSort;
+
+    private HeapSort() {
+    }
+
+    public static void doSort(int[] numArr) {
+        if (heapSort == null) {
+            heapSort = new HeapSort();
+        }
+        heapSort.sort(numArr);
+    }
 
     @Override
     public void sort(int[] arr) {
@@ -16,6 +33,7 @@ public class HeapSort implements Sort {
             swap(arr, 0, i);
             heapify(arr, i, 0);
         }
+        Log.e(TAG, "排序结果"+Arrays.toString(arr));
     }
 
     private void heapify(int arr[], int n, int i) {

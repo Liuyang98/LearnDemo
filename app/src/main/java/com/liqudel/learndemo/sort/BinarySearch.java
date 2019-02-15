@@ -2,24 +2,39 @@ package com.liqudel.learndemo.sort;
 
 import android.util.Log;
 
-public class BinarySearch implements Sort {
-    private static final String TAG = "BinarySearch";
+public class BinarySearch implements Search {
+    private static final String TAG = "二分查找";
 
-    private int commonBinarySearch(int[] arr, int key) {
+
+    private static BinarySearch binarySearch;
+
+    private BinarySearch() {
+    }
+
+    public static void doSearch(int[] numArr) {
+        if (binarySearch == null) {
+            binarySearch = new BinarySearch();
+        }
+
+        int searchValue = createSearchValue(numArr);
+        binarySearch.search(numArr, searchValue);
+    }
+
+    private int commonBinarySearch(int[] arr, int value) {
         int low = 0;
         int high = arr.length - 1;
-        int middle = 0;            //定义middle
+        int middle;
 
         //如果查找值不在数组区间，则无
-        if (key < arr[low] || key > arr[high] || low > high) {
+        if (value < arr[low] || value > arr[high] || low > high) {
             return -1;
         }
 
         while (low <= high) {
             middle = (low + high) / 2;
-            if (arr[middle] > key) {
+            if (arr[middle] > value) {
                 high = middle - 1;
-            } else if (arr[middle] < key) {
+            } else if (arr[middle] < value) {
                 low = middle + 1;
             } else {
                 return middle;
@@ -29,9 +44,13 @@ public class BinarySearch implements Sort {
     }
 
     @Override
-    public void sort(int[] a) {
-        int[] arr = {1, 3, 5, 7, 9, 11};
-        int index = commonBinarySearch(arr, 9);
-        Log.e(TAG, "index: " + index);
+    public void search(int[] arr, int value) {
+        int index = commonBinarySearch(arr, value);
+        Log.e(TAG, "查找结果：" + " value: " + value + "  index: " + index);
     }
+
+    private static int createSearchValue(int[] numArr) {
+        return Math.random() > 0.7f ? (int) (Math.random() * 100) : numArr[(int) (Math.random() * numArr.length)];
+    }
+
 }

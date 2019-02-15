@@ -36,36 +36,16 @@ public class AlgorithmFragment extends BaseFragment {
 
             init();
             initRecy();
-            initAlgorithm();
         }
         return rv;
     }
 
     private void init() {
-        mDatas = new ArrayList<>();
-        mDatas.add("快速排序");
-        mDatas.add("堆排序");
-        mDatas.add("算法3");
-        mDatas.add("算法4");
-        mDatas.add("算法5");
-        HashMap<String, String> map = new HashMap<>();
-        String str = map.put("标题", "新标题");
-        Toast.makeText(mContext, "" + str, Toast.LENGTH_SHORT).show();
-
+        mDatas = Arrays.asList("快速排序", "堆排序", "二分查找", "算法4", "算法5");
     }
 
     private void initRecy() {
         rv.setLayoutManager(new LinearLayoutManager(mContext));
         rv.setAdapter(new SampleRecyclerAdapter(mContext, mDatas));
     }
-
-    //生成数量不定定两位数随机数，并且通过UI操作， 把所有算法类都实现一个公共接口 implements
-    private void initAlgorithm() {
-        int a[] = {42, 38, 45, 50, 47, 13, 27, 42};
-//        new QuickSort().sort(a);
-//        new HeapSort().sort(a);
-//        new BinarySearch().sort(a);
-        Log.e(TAG, ":: " + Arrays.toString(a));
-    }
-
 }

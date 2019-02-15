@@ -45,6 +45,19 @@ public class MainActivity extends AppCompatActivity {
         proxyTest();
     }
 
+    private void initViewPager() {
+        fragmentList.add(new SimpleFragment().setType(0));
+        fragmentList.add(new AlgorithmFragment().setType(1));
+        titleList.add("用例列表");
+        titleList.add("算法");
+
+
+        vp.setAdapter(new SamplePagerAdapter(getSupportFragmentManager(), fragmentList, titleList));
+        tabLayout.setupWithViewPager(vp);
+        vp.setVisibility(View.VISIBLE);
+
+    }
+
     private void proxyTest() {
         Subject realSubject = new RealSubject();
 
@@ -61,23 +74,9 @@ public class MainActivity extends AppCompatActivity {
          */
 
         Subject subject = (Subject) Proxy.newProxyInstance(handler.getClass().getClassLoader(), realSubject.getClass().getInterfaces(), handler);
-
         Log.e(TAG, subject.getClass().getName());
         subject.rent();
         subject.hello("world");
-
-    }
-
-    private void initViewPager() {
-        fragmentList.add(new SimpleFragment().setType(0));
-        fragmentList.add(new AlgorithmFragment().setType(1));
-        titleList.add("用例列表");
-        titleList.add("算法");
-
-
-        vp.setAdapter(new SamplePagerAdapter(getSupportFragmentManager(), fragmentList, titleList));
-        tabLayout.setupWithViewPager(vp);
-        vp.setVisibility(View.VISIBLE);
 
     }
 }

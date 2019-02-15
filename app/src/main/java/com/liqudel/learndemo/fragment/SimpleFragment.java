@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import com.liqudel.learndemo.R;
 import com.liqudel.learndemo.adapter.SampleRecyclerAdapter;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -35,12 +35,7 @@ public class SimpleFragment extends BaseFragment {
     }
 
     private void init() {
-        mDatas = new ArrayList<>();
-        mDatas.add("Constraint约束布局");
-        mDatas.add("Behavior_base");
-        mDatas.add("Behavior_custom");
-        mDatas.add("RxJava 2.0");
-        mDatas.add("QuickSort");
+        mDatas = Arrays.asList("Constraint约束布局", "Behavior_base", "Behavior_custom", "RxJava 2.0", "QuickSort");
     }
 
     private void initRecy() {
@@ -48,21 +43,3 @@ public class SimpleFragment extends BaseFragment {
         rv.setAdapter(new SampleRecyclerAdapter(mContext, mDatas));
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,9 +1,28 @@
 package com.liqudel.learndemo.sort;
 
+import android.util.Log;
+
+import java.util.Arrays;
+
 /**
  * 快速排序
  */
 public class QuickSort implements Sort {
+    private static final String TAG = "快速排序";
+
+    private static QuickSort quickSort;
+
+    private QuickSort() {
+    }
+
+    public static void doSort(int[] arr) {
+        if (quickSort == null) {
+            quickSort = new QuickSort();
+        }
+        quickSort.sort(arr);
+
+        Log.e(TAG, "排序结果" + Arrays.toString(arr));
+    }
 
     @Override
     public void sort(int[] a) {

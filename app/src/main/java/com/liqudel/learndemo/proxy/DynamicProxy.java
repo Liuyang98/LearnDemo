@@ -17,15 +17,11 @@ public class DynamicProxy implements InvocationHandler {
 
     public Object invoke(Object object, Method method, Object[] args) throws Throwable {
         // 　　在代理真实对象前我们可以添加一些自己的操作
-        Log.e(TAG,"before rent house");
-
-        Log.e(TAG,"Method:" + method);
-
+        Log.e(TAG, "方法运行前" + "Method:" + method);
         // 当代理对象调用真实对象的方法时，其会自动的跳转到代理对象关联的handler对象的invoke方法来进行调用
         method.invoke(subject, args);
-
         // 　　在代理真实对象后我们也可以添加一些自己的操作
-        Log.e(TAG,"after rent house");
+        Log.e(TAG, "方法运行后");
         return null;
     }
 }
