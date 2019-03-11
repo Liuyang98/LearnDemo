@@ -31,7 +31,7 @@ public class AnimTextView extends AppCompatTextView {
     public void setMarginLeft(int marginLeft) {
         Log.e(TAG, "setMarginLeft: ");
         RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) getLayoutParams();
-        layoutParams.setMargins(marginLeft, layoutParams.topMargin, layoutParams.rightMargin, layoutParams.rightMargin);
+        layoutParams.setMargins(marginLeft, layoutParams.topMargin, layoutParams.rightMargin, layoutParams.bottomMargin);
         setLayoutParams(layoutParams);
     }
 }

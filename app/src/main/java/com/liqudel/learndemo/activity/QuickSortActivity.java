@@ -5,12 +5,9 @@ import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.liqudel.learndemo.R;
 import com.liqudel.learndemo.bean.StepBean;
@@ -68,28 +65,10 @@ public class QuickSortActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void moveAnim(final int l, final int r) {
-        Log.e("删除", "l : " + l + "  r : " + r);
-        final AnimTextView lTv = textViews.get(l);
-        AnimTextView rTv = textViews.get(r);
-        ObjectAnimator ltranslationX = new ObjectAnimator().ofFloat(lTv, "translationY", 0, MAGIN_VALUE);
-        Toast.makeText(this, "(r - l)" + (r - l), Toast.LENGTH_SHORT).show();
-        ObjectAnimator ltranslationY = new ObjectAnimator().ofInt(lTv, "marginLeft", lTv.getMarginLeft(), lTv.getMarginLeft() + (r - l) * MAGIN_VALUE);
-        ObjectAnimator ltranslationX2 = new ObjectAnimator().ofFloat(lTv, "translationY", MAGIN_VALUE, 0);
+        startAnim(textViews.get(l), r - l);
+        startAnim(textViews.get(r), l - r);
 
-        AnimatorSet animatorSet = new AnimatorSet();  //组合动画
-        animatorSet.playSequentially(ltranslationX, ltranslationY, ltranslationX2); //设置动画
-        animatorSet.setDuration(1000);  //设置动画时间
-        animatorSet.start(); //启动
-        ObjectAnimator rtranslationX = new ObjectAnimator().ofFloat(rTv, "translationY", 0, MAGIN_VALUE);
-        ObjectAnimator rtranslationY = new ObjectAnimator().ofInt(rTv, "marginLeft", rTv.getMarginLeft(), rTv.getMarginLeft() + (r - l) * -MAGIN_VALUE);
-        ObjectAnimator rtranslationX2 = new ObjectAnimator().ofFloat(rTv, "translationY", MAGIN_VALUE, 0);
-
-        AnimatorSet rAnimatorSet = new AnimatorSet();  //组合动画
-        rAnimatorSet.playSequentially(rtranslationX, rtranslationY, rtranslationX2); //设置动画
-        rAnimatorSet.setDuration(1000);  //设置动画时间
-        rAnimatorSet.start(); //启动
-
-        lTv.postDelayed(new Runnable() {
+        numsRlayout.postDelayed(new Runnable() {
             @Override
             public void run() {
                 Collections.swap(textViews, l, r);
@@ -98,7 +77,17 @@ public class QuickSortActivity extends AppCompatActivity implements View.OnClick
                     moveAnim(stepBean.getOldPoi(), stepBean.getNewPoi());
                 }
             }
-        }, 3000);
+        }, 2000);
+    }
+
+    private void startAnim(AnimTextView tv, int distance) {
+        ObjectAnimator rtranslationX = ObjectAnimator.ofFloat(tv, "translationY", 0, MAGIN_VALUE);
+        ObjectAnimator rtranslationY = ObjectAnimator.ofInt(tv, "marginLeft", tv.getMarginLeft(), tv.getMarginLeft() + distance * MAGIN_VALUE);
+        ObjectAnimator rtranslationX2 = ObjectAnimator.ofFloat(tv, "translationY", MAGIN_VALUE, 0);
+        AnimatorSet rAnimatorSet = new AnimatorSet();  //组合动画
+        rAnimatorSet.playSequentially(rtranslationX, rtranslationY, rtranslationX2); //设置动画
+        rAnimatorSet.setDuration(666);  //设置动画时间
+        rAnimatorSet.start(); //启动
     }
 
 
@@ -140,11 +129,6 @@ public class QuickSortActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void startAnim() {
-//        StepBean stepBean = stepList.remove(0);
-//        if (stepBean != null) {
-//            moveAnim(stepBean.getOldPoi(), stepBean.getNewPoi());
-//        }
-
         if (!stepList.isEmpty()) {
             StepBean stepBean = stepList.remove(0);
             moveAnim(stepBean.getOldPoi(), stepBean.getNewPoi());
@@ -158,11 +142,9 @@ public class QuickSortActivity extends AppCompatActivity implements View.OnClick
                 initView();
                 break;
             case R.id.btn_quick_sort:
-//                moveAnim(3, 6);
                 startAnim();
                 break;
             default:
-                Toast.makeText(this, "" + ((TextView) v).getText(), Toast.LENGTH_SHORT).show();
                 break;
 
         }

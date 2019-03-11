@@ -22,6 +22,7 @@ public class QuickSort implements Sort {
         quickSort.sort(arr);
 
         Log.e(TAG, "排序结果" + Arrays.toString(arr));
+
     }
 
     @Override
