@@ -28,6 +28,18 @@
         <activity android:name=".activity.CustomBehaviorActivity" />
         <activity android:name=".activity.RxJavaActivity" />
         <activity android:name=".activity.QuickSortActivity" />
+        <activity android:name=".activity.ServiceActivity" />
+
+
+        <service
+            android:name=".service.AIDLService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.liqudel.learndemo.service" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
 
     </application>
 
