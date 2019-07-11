@@ -17,6 +17,7 @@ public class EasyBehaviorActivity extends AppCompatActivity {
     private RecyclerView rv;
     private List<String> mDatas;
     private Toolbar toolbar;
+    private LinearLayoutManager layoutManager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class EasyBehaviorActivity extends AppCompatActivity {
 
         init();
         initView();
+//        setPool();
     }
 
     private void init() {
@@ -40,9 +42,19 @@ public class EasyBehaviorActivity extends AppCompatActivity {
         toolbar.setTitle("EasyBehavior");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        rv.setLayoutManager(new LinearLayoutManager(this));
+        layoutManager=new LinearLayoutManager(this);
+        rv.setLayoutManager(layoutManager);
         SampleRecyclerAdapter sampleRecyclerAdapter = new SampleRecyclerAdapter(this, mDatas);
         rv.setAdapter(sampleRecyclerAdapter);
     }
+
+    //用于RecyclerView嵌套RecyclerView时，给子RecyclerView用
+    private void setPool() {
+        RecyclerView.RecycledViewPool childPool = new RecyclerView.RecycledViewPool();
+        //1.设置回收
+        rv.setRecycledViewPool(childPool);
+
+    }
+
 
 }
