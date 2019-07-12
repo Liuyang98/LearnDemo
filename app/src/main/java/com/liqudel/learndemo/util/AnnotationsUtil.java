@@ -10,6 +10,13 @@ import java.lang.annotation.RetentionPolicy;
 
 /**
  * 注解类使用，还需要整更多注解方式，了解注解的原理以及使用
+ *
+ * 元注解有
+ *  Retention  保留期  （ 源码阶段，编译期，运行时 ）
+ *  Documented 使注解元素包含到JavaDoc
+ *  Target     注解运用到地方 （ 注解，构造方法，属性，局部变量，方法，包，方法内参数，类，接口 ）
+ *  Inherited  使子类继承父类的注解
+ *  Repeatable 可重复
  */
 public class AnnotationsUtil {
     //使用注解代替枚举
