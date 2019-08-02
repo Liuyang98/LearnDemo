@@ -16,6 +16,7 @@ import com.liqudel.learndemo.fragment.SimpleFragment;
 import com.liqudel.learndemo.proxy.DynamicProxy;
 import com.liqudel.learndemo.proxy.RealSubject;
 import com.liqudel.learndemo.proxy.Subject;
+import com.liqudel.learndemo.util.eventbus.EventBusUtil;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         titleList = new ArrayList<>();
 
         proxyTest();
+        new EventBusUtil().sendEvent("发送测试消息");
     }
 
     private void initViewPager() {
