@@ -1,0 +1,31 @@
+
+OKHTTP：
+
+在配置 OkHttpClient 时设置的 interceptors；
+负责失败重试以及重定向的 RetryAndFollowUpInterceptor；
+负责把用户构造的请求转换为发送到服务器的请求、把服务器返回的响应转换为用户友好的响应的 BridgeInterceptor；
+负责读取缓存直接返回、更新缓存的 CacheInterceptor；
+负责和服务器建立连接的 ConnectInterceptor；
+配置 OkHttpClient 时设置的 networkInterceptors；
+负责向服务器发送请求数据、从服务器读取响应数据的 CallServerInterceptor
+
+责任链
+
+
+
+
+http缓存分为两种，强制缓存、对比缓存
+
+强制缓存生效时直接使用以前的请求结果，无需发起网络请求
+对比缓存无论如何都会发起网络请求，如果请求结果未改变，服务端会返回304，不会返回数据
+（默认实现，只有GET方法会被缓存）
+
+
+开始请求--|
+
+无网络，无缓存，返回504
+无网络，有缓存，返回缓存结果
+有网络，code4，返回缓存结果
+读取网络结果
+
+缓存key的方式，URL进行MD5处理，并进行16进制转换
