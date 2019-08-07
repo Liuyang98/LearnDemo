@@ -1,6 +1,5 @@
 package com.liqudel.learndemo;
 
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -10,7 +9,6 @@ import android.util.Log;
 import android.view.View;
 
 import com.liqudel.learndemo.adapter.SamplePagerAdapter;
-import com.liqudel.learndemo.bean.StepBean;
 import com.liqudel.learndemo.fragment.AlgorithmFragment;
 import com.liqudel.learndemo.fragment.SimpleFragment;
 import com.liqudel.learndemo.proxy.DynamicProxy;
@@ -23,8 +21,6 @@ import java.lang.reflect.Proxy;
 import java.util.ArrayList;
 import java.util.List;
 
-import io.reactivex.Observable;
-import io.reactivex.functions.Function;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
