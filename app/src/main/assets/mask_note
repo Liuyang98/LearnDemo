@@ -1,0 +1,27 @@
+
+性能优化
+
+
+md5 base64
+
+synchronized lock
+
+ArrayList copyof
+
+
+ArrayList 底层是数组，    
+LinkedList，底层无数组， Node (item, prev ,next) 双向链表，类中存了头尾 first ，last 
+
+红黑树。
+HashMap和HashTable，
+
+TreeMap HashMap
+
+Android优化项
+
+Java双亲委派 类加载机制 垃圾回收  多线程   新生代-复制清理 老年代-标记清理   JVM OOM排查
+
+强软弱虚
+
+和ArrayList和Vector一样，同样的类似关系的类还有HashMap和HashTable，StringBuilder和StringBuffer，
+后者是前者线程安全版本的实现。希望以后大家在面试过程中，能说出个因为所以，而不是一味的去背面试题，唯有理解，无需再背。
